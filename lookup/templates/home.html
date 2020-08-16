@@ -1,22 +1,25 @@
 {%extends 'base.html'%}
 {% block content%}
 
-<h1>Hello World</h1>
-<br>
+{% if zipcode %}
+    {{zipcode}}
+{% endif %}
 
 {% if api %}   
     {% if api == "Error ..." %}
         There was an error, please try again ...
     {% else %}
-        Date: {{ api.0.DateObserved }} <br>
-        Hour: {{ api.0.HourObserved }} <br>
-        Time Zone: {{ api.0.LocalTimeZone }}<br>
-        State : {{ api.0.StateCode }} <br>
-        Latitude: {{api.0.Latitude}} <br>
-        Longitude: {{api.0.Longitude}} <br>
-        Air Quality: {{ api.0.AQI }} <br>
-        Area : {{ api.0.ReportingArea }}<br>
-        Category: {{ api.0.Category.Name }} <br><br>
+    <div class="jumbotron {{category_color}}">
+        <h1 class="display-4">{{ api.0.Category.Name }}</h1>
+        <p class="lead"> Date: {{ api.0.DateObserved }} {{ api.0.HourObserved }} {{ api.0.LocalTimeZone }} <br> State : {{ api.0.StateCode }} <br>Current {{ api.0.ReportingArea }} Air Quality: {{ api.0.AQI }}</p>
+        
+        <p>{{category_description}}</p>      
+
+        
+        
+    </div>
+    <br>
+         
     {% endif %}
     
 {% endif %}
