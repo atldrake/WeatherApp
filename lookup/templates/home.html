@@ -2,6 +2,25 @@
 {% block content%}
 
 <h1>Hello World</h1>
+<br>
+
+{% if api %}   
+    {% if api == "Error ..." %}
+        There was an error, please try again ...
+    {% else %}
+        Date: {{ api.0.DateObserved }} <br>
+        Hour: {{ api.0.HourObserved }} <br>
+        Time Zone: {{ api.0.LocalTimeZone }}<br>
+        State : {{ api.0.StateCode }} <br>
+        Latitude: {{api.0.Latitude}} <br>
+        Longitude: {{api.0.Longitude}} <br>
+        Air Quality: {{ api.0.AQI }} <br>
+        Area : {{ api.0.ReportingArea }}<br>
+        Category: {{ api.0.Category.Name }} <br><br>
+    {% endif %}
+    
+{% endif %}
+
 
 
 {% endblock %}
