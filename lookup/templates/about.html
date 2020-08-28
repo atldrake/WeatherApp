@@ -1,7 +1,55 @@
 {% extends 'base.html'%}
 
 {% block content %}
+<style>
+.img-circle{
+    border-radius: 50%;
+    
+}
+img{
+    display: inline-block;
+    vertical-align: middle;
+    height: auto;
+    border-style: none;
+}
+#about-img{
+    max-width: 15em;
+    position: relative;
+    
+}
+</style>
+<!-- About Section -->
 
-<h1>About Me ...</h1>
+<section class="success" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>About</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-2">
+                <p>This is an air quality app build with the Django web Framwork. This app uses the airnow api. To get the most out this app, only use US ZIP CODES.</p>
+            </div>
+            <div class="col-lg-4">
+                <p>The languages that you see on this app are HTML, CSS, Boostrap, Python and Django Framework. By using this BootStrap template I saved myself a lot of time. Instead of creating the HTML and CSS from scratch I was able to edit the template to the way I wanted it to look like.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<table cellspacing="20">
+    <tr>
+        <td><img class="img-circle" id="about-img" src="http://firmtechsolution.com/assets/images/Drake.png" alt="ATL Drake picture || FirmTech Soulutions picture"></td>
+        <td><h1>Al Hussein Abubakar</h1>
+            <p><em> Founder & CTO of <strong><a href="https://firmtechsolution.com/"> FirmTech Solutions</a></strong></em></p>
+            <p>I am an IT Support Specialist, Trainer and a Software Developer & I 💙 coding </p>
+            <p><a href="https://firmtechsolution.com/">💻🌐 Website</a></p>
+            <p><a href="mailto:atldrake532@gmail.com">📧 Email</a></p>
+            <p><a href="tel:+233249046210"> 📞 📱Call me</a></p>
+        </td>
+
+    </tr>
+</table> 
 
 {% endblock %}
